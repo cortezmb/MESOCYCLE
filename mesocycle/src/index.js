@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from "redux"; 
 import { Provider } from "react-redux"; //this connects the Store with the Components via Provider
-import Counter from './Counter';
-import CounterHook from './components/CounterHook'
+import RepCounter from './components/RepCounter';
+import RepMaxInput from './components/RepMaxInput';
+// import CounterHook from './components/CounterHook'
 import reducer from "./reducers/reducer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import BaseLayout from './components/layout/BaseLayout'
@@ -17,8 +18,14 @@ ReactDOM.render(
     <BrowserRouter>
     <BaseLayout>
     <Switch>
-        <Route exact path='/' component={Counter}/>
-        <Route path='/hooks' component={CounterHook}/>
+        {/* This view is the Homepage */}
+        {/* <Route exact path='/' component={}/> */}
+        {/* This view has the workout of the day with rep counter */}
+        <Route path='/RepCount' component={RepCounter}/>
+        {/* This view has has the movement descriptions and 10RM input forms */}
+        <Route path='/RepMax' component={RepMaxInput}/> 
+
+        {/* <Route path='/hooks' component={CounterHook}/> */}
       </Switch>
     </BaseLayout>
     </BrowserRouter>
