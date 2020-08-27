@@ -2,16 +2,21 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import increaseAction from '../actions/IncreaseAction';
 import decreaseAction from '../actions/DecreaseAction';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 class RepCounter extends Component {
   render() {
     return (
       <>
-        
-        
-        <button onClick={this.props.onIncrease} > Increase</button>
-        <button onClick={this.props.onDecrease} > Decrease</button>
-        <h1>{this.props.ctr}</h1>
+        <Container fluid>
+          <Row>
+            <h1>{this.props.ctr}</h1>
+            <Button onClick={this.props.onIncrease} > <i class="fas fa-sort-up">+</i></Button><br/>
+            <Button onClick={this.props.onDecrease} > - </Button>            
+          </Row>
+        </Container>
       </>
     )
   }
