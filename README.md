@@ -5,11 +5,33 @@
 
 Say hello to your personal trainer.
 
+## Overview:
 Mesocycle is an easy to use app that customizes and autoprograms your workouts for an entire month.
+
+## Project Requirements
+Use React AND Redux
+
+Have at least 3 pages (3 routes)
+
+Use React Router
+
+Use Bootstrap or Material UI or a MaterializeCSS or any other css library
+
+Have an API call
+
+Store information from your API call into global state (Redux)
+
+At least one child component must access the global state
+
+At least one child component must update the global state
+
+## Placeholder for screenshots
+
+## Framework: 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to use the app:
 
 In the project directory, you can run:
 
