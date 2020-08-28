@@ -2,7 +2,8 @@
 
 const initialState = {
     counter: 0,
-    weight: 0
+    weight: 0,
+    movement: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,7 +27,8 @@ const reducer = (state = initialState, action) => {
             }
         case 'ADD_MOVEMENT':
             return {
-                
+                ...state,
+                movement: action.movement.exercise
             }
         default:
             return state;

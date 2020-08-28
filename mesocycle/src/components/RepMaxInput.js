@@ -39,14 +39,6 @@ class RepMaxInput extends Component {
   }
 }
 
-//purpose is to map redux global state to a prop we can use inside react
-// const mapStateToProps = (state) => {
-
-//   //mapped react prop repmax to action.weight
-//   return {
-//     repmax: action.weight
-//   }
-// }
 //this function is going to take in a dipatch parameter
 //dispatch is a function that sends a message to the store
 const mapDispatchToProps = (dispatch) => {
