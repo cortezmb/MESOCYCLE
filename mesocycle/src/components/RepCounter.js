@@ -13,8 +13,8 @@ class RepCounter extends Component {
         <Container fluid>
           <Row>
             <h1>{this.props.ctr}</h1>
-            <Button onClick={this.props.onIncrease} > <i class="fas fa-sort-up">+</i></Button><br/>
-            <Button onClick={this.props.onDecrease} > - </Button>            
+            <Button onClick={this.props.onIncrease} ></Button><br/>
+            <Button onClick={this.props.onDecrease} > </Button>            
           </Row>
         </Container>
       </>

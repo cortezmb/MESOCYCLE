@@ -1,7 +1,8 @@
 
 
 const initialState = {
-    counter: 0
+    counter: 0,
+    weight: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +18,15 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 counter: state.counter - 1
+            }
+        case 'INCREASE_MAX':
+            return {
+                ...state,
+                weight: action.weight.pounds
+            }
+        case 'ADD_MOVEMENT':
+            return {
+                
             }
         default:
             return state;
