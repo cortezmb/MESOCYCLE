@@ -1,5 +1,5 @@
 
-let chooseMovement = () => {
+let chooseMovement = (exercise) => {
 
     return {
         type: 'ADD_MOVEMENT',
