@@ -1,9 +1,14 @@
-
+import { v1 as uuidv1 } from 'uuid';
 
 const initialState = {
     counter: 0,
     weight: 0,
-    movement: []
+    movement: [
+        {
+            id: uuidv1(),
+            name: ""
+        }
+    ]
 }
 
 const reducer = (state = initialState, action) => {

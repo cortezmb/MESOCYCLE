@@ -29,11 +29,11 @@ ReactDOM.render(
         {/* This view is where use will choose a movement from the dropdown menu */}
         <Route path='/Movement' component={MovementMenu}/>
 
-        {/* This view has the workout of the day with rep counter */}
-        <Route path='/RepCount' component={RepCounter}/>
-
         {/* This view has the movement descriptions and 10RM input forms */}
         <Route path='/RepMax' component={RepMaxInput}/> 
+
+        {/* This view has the workout of the day with rep counter */}
+        <Route path='/RepCount' component={RepCounter}/>
 
         {/* This view has the training volume graph */}
         <Route path='/Stats' component={Statistics}/>

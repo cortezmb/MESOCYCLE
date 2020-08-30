@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import increaseMax from '../actions/IncreaseMax';
+import { Link } from "react-router-dom";
 
 class RepMaxInput extends Component {
 
@@ -28,10 +29,13 @@ class RepMaxInput extends Component {
       <>
       <Container fluid>
           <Row>
-          <form onSubmit={this.handleSubmit}>
-            <input ref="amount" type="text" placeholder="10RM" />
-            <button type="submit">Submit</button>
-          </form>
+            <form onSubmit={this.handleSubmit}>
+              <input ref="amount" type="text" placeholder="10RM" />
+              <button type="submit">Submit</button>
+            </form>
+            <div>
+                <Link to="/RepCount" className="btn btn-primary">Continue</Link>
+            </div>
           </Row>
       </Container>
       </>
