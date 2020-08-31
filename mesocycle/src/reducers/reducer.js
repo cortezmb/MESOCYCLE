@@ -1,11 +1,11 @@
-import { v1 as uuidv1 } from 'uuid';
+// import { v1 as uuidv1 } from 'uuid';
 
 const initialState = {
     counter: 0,
     weight: 0,
     movement: [
         {
-            id: uuidv1(),
+            // id: uuidv1(),
             name: ""
         }
     ]
