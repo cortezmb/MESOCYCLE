@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+    background-color: #FFFFFF;
+  }
+
+.headerImage {
+    background: url('../images/MESOCYCLE LOGO_black_bcg.png');
+    width: 25em;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.header{
+    height: 30vh;
+    background-color: black;
+  }
+
+.mainBody {
+    height: 50vh;
+}
+
+label{
+    color: #ee2d37;
+    font-family: 'Amatic SC';
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+.navBG{
+    background: #ee2d37;
+    height: 20vh;
+}
+
+.iconColor {
+    color: #FFFFFF;
+}
+
+.navFontSize {
+    font-size: x-large;
+}
