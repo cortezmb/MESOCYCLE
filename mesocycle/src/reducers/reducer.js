@@ -1,11 +1,15 @@
-// import { v1 as uuidv1 } from 'uuid';
+
 
 const initialState = {
     counter: 0,
     weight: 0,
-    movement: [
+    inclinePushMovement: [
         {
-            // id: uuidv1(),
+            name: ""
+        }
+    ],
+    chestIsolationMovement: [
+        {
             name: ""
         }
     ]
@@ -30,10 +34,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 weight: action.weight.pounds
             }
-        case 'ADD_MOVEMENT':
+        case 'ADD_INCLINE_PUSH':
             return {
                 ...state,
-                movement: action.movement.exercise
+                inclinePushMovement: action.movement
+            }
+        case 'ADD_CHEST_ISOLATION':
+            return {
+                ...state,
+                chestIsolationMovement: action.movement
             }
         default:
             return state;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { chooseInclinePush } from '../actions/ChooseMovement';
+import { chooseChestIsolation } from '../actions/ChooseMovement';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import chooseMovement from '../actions/ChooseMovement';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import { v1 as uuidv1 } from 'uuid';
-import { Link } from "react-router-dom";
-// import DropdownButton from 'react-bootstrap/DropdownButton';
-// import Dropdown from 'react-bootstrap/Dropdown'
+
 
 class MovementMenu extends Component {
 
@@ -17,7 +16,7 @@ class MovementMenu extends Component {
 
         this.state = {
 
-        dropdownValue: "Incline Medium Grip Bench Press",
+        dropdownInclinePushValue: "Incline Medium Grip Bench Press",
 
         inclinePush: [
             {
@@ -44,6 +43,39 @@ class MovementMenu extends Component {
                 id: 6,
                 name: "Incline Machine Bench Press"
             }
+        ],
+
+        dropdownChestIsolationValue: "Flat Dumbbell Fly",
+
+        chestIsolation: [
+            {
+                id: 1, 
+                name: "Flat Dumbbell Fly"
+            },
+            {
+                id: 2, 
+                name: "Incline Dumbbell Fly"
+            },
+            {
+                id: 3, 
+                name: "Cable Fly"
+            },
+            {
+                id: 4, 
+                name: "High Cable Fly"
+            },
+            {
+                id: 5, 
+                name: "Machine Chest Fly"
+            },
+            {
+                id: 6, 
+                name: "Cable Incline Fly"
+            },
+            {
+                id: 7, 
+                name: "Pec Dec Fly"
+            }
         ]
         }
     }
@@ -54,71 +86,85 @@ class MovementMenu extends Component {
 
         this.setState(
             {
-                dropdownValue: e.target.value
+                dropdownInclinePushValue: e.target.value,
+                dropdownChestIsolationValue: e.target.value
+
         });
     }
 
-    handleSubmit = (e) => {
+    handleSubmitInclinePush = (e) => {
 
         e.preventDefault();
 
         // console.log(e.target.value)
 
-        let exercise = {
+        let inclinePushExercise = {
 
-            // name: this.refs.name.value
-            name: this.state.dropdownValue
+            name: this.state.dropdownInclinePushValue
         }
-        console.log(this.state.dropdownValue)
+    
+        
         //collect the data from the form 
         //this uploads data to the global store
-        this.props.addMovement(exercise)
+        this.props.addInclinePush(inclinePushExercise);
+    }
+    handleSubmitChestIsolation = (e) => {
+
+        e.preventDefault();
+
+        // console.log(e.target.value)
+
+        let chestIsolationExercise = {
+
+            name: this.state.dropdownChestIsolationValue
+        }
+    
+        
+        //collect the data from the form 
+        //this uploads data to the global store
+        this.props.addchestIsolation(chestIsolationExercise)
     }
 
   render() {
 
-        // let exerciseArray = this.state.inclinePush.map(exerciseName => {
+        let inclinePushArray = this.state.inclinePush.map((inclinePushName, index) => {
 
-        //     return <option ref={exerciseName.name} value={exerciseName.name} >{exerciseName.name}</option>
-        // })
+            return <option key={index} ref={inclinePushName.name} value={inclinePushName.name} >{inclinePushName.name}</option>
+        });
+
+        let chestIsolationArray = this.state.chestIsolation.map((chestIsolationName, index) => {
+
+            return <option key={index} ref={chestIsolationName.name} value={chestIsolationName.name} >{chestIsolationName.name}</option>
+        });
     return (
-        <Container fluid>
-        <Row>
-            <form onSubmit={this.handleSubmit}>
+        <>
+        <Container>
+            <Row>                     
+                <form onSubmit={this.handleSubmitInclinePush}>
                     <label>
-                        <select value={this.state.dropdownValue} onChange={this.handleChange}>
-                        {/* {exerciseArray} */}
-                        <option ref="name" value="incline wide grip bench press">Incline Wide Grip Bench Press</option>
-                        <option ref="low incline dumbbell press" value="low incline dumbbell press">Low Incline Dumbbell Press</option>
-                        <option ref="incline dumbbell press" value="incline dumbbell press">Incline Dumbbell Press</option>              
-                        <option ref="incline close grip bench press" value="incline close grip bench press">Incline Close Grip Bench Press</option>              
-                        <option ref="incline machine bench press" value="incline machine bench press">Incline Machine Bench Press</option>              
+                        <select value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
+                        {inclinePushArray}
                         </select>
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-                <div>
-                    <Link to="/RepMax" className="btn btn-primary">Continue</Link>
-                </div>
 
-            {/* <form onSubmit={this.handleSubmit}>
-                <label>
-                    <select value={this.props.movement} onchange={this.handleChange}>
-                    <option ref="name" value="incline medium grip bench press">Incline Medium Grip Bench Press</option>
-                    <option ref="name" value="incline wide grip bench press">Incline Wide Grip Bench Press</option>
-                    <option ref="name" value="low incline dumbbell press">Low Incline Dumbbell Press</option>
-                    <option ref="name" value="incline dumbbell press">Incline Dumbbell Press</option>              
-                    <option ref="name" value="incline close grip bench press">Incline Close Grip Bench Press</option>              
-                    <option ref="name" value="incline machine bench press">Incline Machine Bench Press</option>              
-                    </select>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-            <div>
-                <Link to="/RepMax" className="btn btn-primary">Continue</Link>
-            </div> */}
-        </Row>
-    </Container>
+                <form onSubmit={this.handleSubmitChestIsolation}>
+                    <label>
+                        <select value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
+                        {chestIsolationArray}
+                        </select>
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>      
+
+                <div>
+                    {/* <button style="font-family: AMATIC SC; font-size: 4vw;" id="submitButton" >Whip It!</button>   */}
+                    <Link to="/RepMax" className="btn btn-primary">Continue</Link>      
+                </div>
+            </Row>
+        </Container>
+        </>
     )
   }
 }
@@ -130,7 +176,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
       //the onIncrement function is returning a function named dispatch. 
       //dispatch function needs to be wrapped in a function so it doesn't automatically execute
-      addMovement: (exercise) => dispatch(chooseMovement(exercise)),
+      addInclinePush: (inclinePushExercise) => dispatch(chooseInclinePush(inclinePushExercise)),
+      addchestIsolation: (chestIsolationExercise) => dispatch(chooseChestIsolation(chestIsolationExercise))
     }
   }
   

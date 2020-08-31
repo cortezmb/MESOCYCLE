@@ -1,10 +1,19 @@
 
-let chooseMovement = (exercise) => {
+export const chooseInclinePush = (exercise) => {
 
     return {
-        type: 'ADD_MOVEMENT',
+        type: 'ADD_INCLINE_PUSH',
         movement: exercise
     }
 }
 
-export default chooseMovement
+
+
+export const chooseChestIsolation = (exercise) => {
+
+    return {
+        type: 'ADD_CHEST_ISOLATION',
+        movement: exercise
+    }
+}
+
