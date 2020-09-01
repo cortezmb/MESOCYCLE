@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import { createStore } from "redux"; 
 import { Provider } from "react-redux"; //this connects the Store with the Components via Provider
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import RepCounter from './components/RepCounter';
+// import RepCounter from './components/RepCounter';
 import RepMaxInput from './components/RepMaxInput';
-import Statistics from './components/Statistics';
+import Homepage from './components/Homepage';
+// import Statistics from './components/Statistics';
 import MovementMenu from './components/MovementMenu';
 import reducer from "./reducers/reducer";
 import BaseLayout from './components/layout/BaseLayout'
@@ -24,7 +25,7 @@ ReactDOM.render(
     <Switch>
 
         {/* This view is the Homepage */}
-        {/* <Route exact path='/' component={}/> */}
+        <Route exact path='/' component={Homepage}/>
 
         {/* This view is where use will choose a movement from the dropdown menu */}
         <Route path='/Movement' component={MovementMenu}/>
@@ -32,11 +33,11 @@ ReactDOM.render(
         {/* This view has the movement descriptions and 10RM input forms */}
         <Route path='/RepMax' component={RepMaxInput}/> 
 
-        {/* This view has the workout of the day with rep counter */}
-        <Route path='/RepCount' component={RepCounter}/>
+        {/* This view has the workout of the day with rep counter
+        <Route path='/RepCount' component={RepCounter}/> */}
 
         {/* This view has the training volume graph */}
-        <Route path='/Stats' component={Statistics}/>
+        {/* <Route path='/Stats' component={Statistics}/> */}
 
         {/* <Route path='/hooks' component={CounterHook}/> */}
       </Switch>

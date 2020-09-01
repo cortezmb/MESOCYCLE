@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
 import { increaseMaxInclinePush} from '../actions/IncreaseMax';
 import { increaseMaxChestIsolation} from '../actions/IncreaseMax';
 import { Link } from "react-router-dom";
+import'./layout/BaseLayoutStyle.css';
+
 
 class RepMaxInput extends Component {
 
@@ -41,22 +43,24 @@ class RepMaxInput extends Component {
   render() {
     return (
       <>
-      <Container>
-          <Row className="inputForm">
-            <form onSubmit={this.handleSubmitInclinePush}>
-              <input ref="amount" type="text" placeholder="10RM" />
-              <button type="submit">Submit</button>
-            </form>
+        <div className="container-fluid h-100 p-0 w-100">
+          <div className="row position-relative d-flex w-100 flex-row justify-content-center flex-wrap mx-0">
+              <div className=" mainBody inputForm col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100">
+                <form onSubmit={this.handleSubmitInclinePush}>
+                  <input ref="amount" type="text" placeholder="10RM" />
+                  <button type="submit">Submit</button>
+                </form>
 
-            <form onSubmit={this.handleSubmitChestIsolation}>
-              <input ref="weight" type="text" placeholder="10RM" />
-              <button type="submit">Submit</button>
-            </form>
-            <div>
-                <Link to="/RepCount" className="btn continueButton">Continue</Link>
-            </div>
-          </Row>
-      </Container>
+                <form onSubmit={this.handleSubmitChestIsolation}>
+                  <input ref="weight" type="text" placeholder="10RM" />
+                  <button type="submit">Submit</button>
+                </form>
+                <div>
+                    <Link to="/RepCount" className="btn continueButton">Continue</Link>
+                </div>
+              </div>
+          </div>
+        </div> 
       </>
     )
   }

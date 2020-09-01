@@ -4,8 +4,7 @@ import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import'./layout/BaseLayoutStyle.css';
 
 
 class MovementMenu extends Component {
@@ -138,34 +137,36 @@ class MovementMenu extends Component {
         });
     return (
         <>
-        <Container>
-            <Row className="dropDownMenu" >                     
-                <form onSubmit={this.handleSubmitInclinePush}>
-                    <label>
-                        <select value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
-                        {inclinePushArray}
-                        </select>
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
+            <div className="container-fluid h-100 p-0 w-100">
+                <div className="row position-relative d-flex w-100 flex-row justify-content-center flex-wrap mx-0">
+                    <div className=" mainBody dropDownMenu col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100">              
+                            <form onSubmit={this.handleSubmitInclinePush}>
+                                <label>
+                                    <select value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
+                                    {inclinePushArray}
+                                    </select>
+                                </label>
+                                <input type="submit" value="Submit" />
+                            </form>
 
-                <form onSubmit={this.handleSubmitChestIsolation}>
-                    <label>
-                        <select value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
-                        {chestIsolationArray}
-                        </select>
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>   
+                            <form onSubmit={this.handleSubmitChestIsolation}>
+                                <label>
+                                    <select value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
+                                    {chestIsolationArray}
+                                    </select>
+                                </label>
+                                <input type="submit" value="Submit" />
+                            </form>   
 
-                <div className="d-flex justify-content-center">
-                    <Link to="/RepMax" className="btn continueButton">Continue</Link>      
+                            <div className="d-flex justify-content-center">
+                                <Link to="/RepMax" className="btn continueButton">Continue</Link>      
+                            </div>
+                    </div>
                 </div>
-            </Row>
-        </Container>
+            </div> 
         </>
-    )
-  }
+        )
+    }
 }
 
 //this function is going to take in a dipatch parameter
