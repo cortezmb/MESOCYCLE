@@ -29,7 +29,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter - 1
             }
-        case 'INCREASE_MAX':
+        case 'INCREASE_MAX_INCLINE_PUSH':
+            return {
+                ...state,
+                weight: action.weight.pounds
+            }
+        case 'INCREASE_MAX_CHEST_ISOLATION':
             return {
                 ...state,
                 weight: action.weight.pounds

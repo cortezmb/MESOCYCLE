@@ -22,11 +22,8 @@ const BaseLayout = (props) => {
 
             {/* Main section starts here */}
             <div className="container-fluid h-100 p-0 w-100">
-                <div className="row position-relative d-flex w-100 flex-row justify-content-center main-content flex-wrap mx-0">
-                    <div className="d-flex col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100">
-                        <label className="text-center p-4" >content here</label>
-                    </div>
-                    <div className="mainBody" >
+                <div className="row position-relative d-flex w-100 flex-row justify-content-center flex-wrap mx-0">
+                    <div className=" mainBody col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100">
                         {props.children}
                     </div>
                 </div>
@@ -36,7 +33,8 @@ const BaseLayout = (props) => {
             {/* Start of footer */}
             <div className="container-fluid navBarColor p-0 w-100">
                 <nav className="navbar navbar-light navBG font font-weight-bolder d-flex justify-content-between">       
-                    <a className="nav-link text-light navFontSize" href="/RepMax">10RM<span className="sr-only">(current)</span></a>       
+                    <a className="nav-link text-light navFontSize" href="/RepMax">10RM<span className="sr-only">(current)</span></a>
+                    <a className="nav-link text-light navFontSize" href="/Movement">Exercises<span className="sr-only">(current)</span></a>        
                     <a className="nav-link text-light navFontSize" href="/">Home <span className="sr-only">(current)</span></a>
                     <a className="nav-link text-light navFontSize" href="/Stats">Stats<span className="sr-only">(current)</span></a>
                 </nav>

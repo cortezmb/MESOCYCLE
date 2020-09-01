@@ -139,7 +139,7 @@ class MovementMenu extends Component {
     return (
         <>
         <Container>
-            <Row>                     
+            <Row className="dropDownMenu" >                     
                 <form onSubmit={this.handleSubmitInclinePush}>
                     <label>
                         <select value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
@@ -156,11 +156,10 @@ class MovementMenu extends Component {
                         </select>
                     </label>
                     <input type="submit" value="Submit" />
-                </form>      
+                </form>   
 
-                <div>
-                    {/* <button style="font-family: AMATIC SC; font-size: 4vw;" id="submitButton" >Whip It!</button>   */}
-                    <Link to="/RepMax" className="btn btn-primary">Continue</Link>      
+                <div className="d-flex justify-content-center">
+                    <Link to="/RepMax" className="btn continueButton">Continue</Link>      
                 </div>
             </Row>
         </Container>

@@ -39,3 +39,21 @@ label{
 .navFontSize {
     font-size: x-large;
 }
+
+.dropDownMenu {
+    display: block;
+}
+
+.continueButton {
+    background-color: #ee2d37;
+    color: #FFFFFF;
+}
+
+.inputForm {
+    display: block;
+}
+
+.increaseDecreaseButton {
+    background-color: #ee2d37;
+    color: #FFFFFF;
+}

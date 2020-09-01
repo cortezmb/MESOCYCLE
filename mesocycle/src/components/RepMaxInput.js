@@ -2,39 +2,58 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import increaseMax from '../actions/IncreaseMax';
+import { increaseMaxInclinePush} from '../actions/IncreaseMax';
+import { increaseMaxChestIsolation} from '../actions/IncreaseMax';
 import { Link } from "react-router-dom";
 
 class RepMaxInput extends Component {
 
-  handleSubmit = (e) => {
+  handleSubmitInclinePush = (e) => {
 
     e.preventDefault();
 
     //collect the data from form 
 
     //this uploads data to the global store
-    this.props.onIncrease({
+    this.props.addInclinePush({
       
       // id: 1, 
       // movementName: "dumbbell fly",
       pounds: this.refs.amount.value
-    })
+    });
+  }
 
-}
+  handleSubmitChestIsolation = (e) => {
 
+    e.preventDefault();
+
+    //collect the data from form 
+
+    //this uploads data to the global store
+    this.props.addChestIsolation({
+      
+      // id: 1, 
+      // movementName: "dumbbell fly",
+      pounds: this.refs.weight.value
+    });
+  }
 
   render() {
     return (
       <>
-      <Container fluid>
-          <Row>
-            <form onSubmit={this.handleSubmit}>
+      <Container>
+          <Row className="inputForm">
+            <form onSubmit={this.handleSubmitInclinePush}>
               <input ref="amount" type="text" placeholder="10RM" />
               <button type="submit">Submit</button>
             </form>
+
+            <form onSubmit={this.handleSubmitChestIsolation}>
+              <input ref="weight" type="text" placeholder="10RM" />
+              <button type="submit">Submit</button>
+            </form>
             <div>
-                <Link to="/RepCount" className="btn btn-primary">Continue</Link>
+                <Link to="/RepCount" className="btn continueButton">Continue</Link>
             </div>
           </Row>
       </Container>
@@ -50,7 +69,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     //the onIncrement function is returning a function named dispatch. 
     //dispatch function needs to be wrapped in a function so it doesn't automatically execute
-    onIncrease: (pounds) => dispatch(increaseMax(pounds)),
+    addInclinePush: (pounds) => dispatch(increaseMaxInclinePush(pounds)),
+    addChestIsolation: (pounds) => dispatch(increaseMaxChestIsolation(pounds))
   }
 }
 
