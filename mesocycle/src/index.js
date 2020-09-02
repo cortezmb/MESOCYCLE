@@ -4,8 +4,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux"; //this connects the Store with the Components via Provider
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import RepCounter from './components/RepCounter';
-import RepMaxInput from './components/RepMaxInput';
+// import RepMaxInput from './components/RepMaxInput';
 import Homepage from './components/Homepage';
+import Videos from './components/Videos';
 // import Statistics from './components/Statistics';
 import MovementMenu from './components/MovementMenu';
 import reducer from "./reducers/reducer";
@@ -31,7 +32,9 @@ ReactDOM.render(
         <Route path='/Movement' component={MovementMenu}/>
 
         {/* This view has the movement descriptions and 10RM input forms */}
-        <Route path='/RepMax' component={RepMaxInput}/> 
+        {/* <Route path='/RepMax' component={RepMaxInput}/>  */}
+
+        <Route path='/Video' component={Videos}/> 
 
         {/* This view has the workout of the day with rep counter
         <Route path='/RepCount' component={RepCounter}/> */}

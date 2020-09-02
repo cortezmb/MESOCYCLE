@@ -17,7 +17,7 @@ body {
   }
 
 .mainBody {
-    height: 50vh;
+    height: 60vh;
 }
 
 label{
@@ -29,7 +29,7 @@ label{
 
 .navBG{
     background: #ee2d37;
-    height: 20vh;
+    height: 10vh;
 }
 
 .iconColor {
@@ -37,20 +37,59 @@ label{
 }
 
 .navFontSize {
-    font-size: x-large;
+    font-size: small;
 }
 
 .dropDownMenu {
     display: block;
 }
 
+.select {
+    padding: 8px 12px;
+    color: black;
+    /* background-color: lightgray; */
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    font-size: 2vh;
+}
+
+.submit {
+    padding: 8px 12px;
+    color: black;
+    /* background-color: lightgray; */
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    font-size: 2vh;
+}
+
+.category {
+    font-size: 2vh;
+    padding: 5px;
+}
+
 .continueButton {
     background-color: #ee2d37;
     color: #FFFFFF;
+    border: 1px solid #ee2d37;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 2vh;
 }
 
 .inputForm {
     display: block;
+    line-height: 1.5;
+    /* padding: 17px 60px; */
+}
+
+.formStyle1{
+    background-color: lightgray;
+    width: 100%;
+}
+
+.formStyle2{
+    background-color: darkgray;
+    width: 100%;
 }
 
 .increaseDecreaseButton {
@@ -61,3 +100,8 @@ label{
 .homepage {
     text-align: center;
 }
+
+.font {
+    font-family: 'Amatic SC';
+}
+

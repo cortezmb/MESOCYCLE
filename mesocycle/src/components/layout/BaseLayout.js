@@ -22,7 +22,8 @@ const BaseLayout = (props) => {
             {/* Start of footer */}
             <div className="container-fluid navBarColor p-0 w-100">
                 <nav className="navbar navbar-light navBG font font-weight-bolder d-flex justify-content-between">       
-                    <a className="nav-link text-light navFontSize" href="/RepMax">10RM<span className="sr-only">(current)</span></a>
+                    {/* <a className="nav-link text-light navFontSize" href="/RepMax">10RM<span className="sr-only">(current)</span></a> */}
+                    <a className="nav-link text-light navFontSize" href="/Video"> Video <span className="sr-only">(current)</span></a>
                     <a className="nav-link text-light navFontSize" href="/">Home <span className="sr-only">(current)</span></a>
                     <a className="nav-link text-light navFontSize" href="/Movement">Exercises<span className="sr-only">(current)</span></a>        
                     {/* <a className="nav-link text-light navFontSize" href="/Stats">Stats<span className="sr-only">(current)</span></a> */}

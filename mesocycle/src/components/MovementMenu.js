@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import RepMaxInput from './RepMaxInput';
 import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,60 +21,73 @@ class MovementMenu extends Component {
         inclinePush: [
             {
                 id: 1,
-                name: "Incline Wide Grip Bench Press"
+                name: "Incline Wide Grip Bench Press",
+                category: "Incline Push"
             },
             {
                 id: 2,
-                name: "Low Incline Dumbbell Press"
+                name: "Low Incline Dumbbell Press",
+                category: "Incline Push"
             },
             {
                 id: 3,
-                name: "Low Incline Dumbbell Press"
+                name: "Low Incline Dumbbell Press",
+                category: "Incline Push"
             },
             {
                 id: 4,
-                name: "Incline Dumbbell Press"
+                name: "Incline Dumbbell Press",
+                category: "Incline Push"
             },
             {
                 id: 5,
-                name: "Incline Close Grip Bench Press"
+                name: "Incline Close Grip Bench Press",
+                category: "Incline Push"
             },
             {
                 id: 6,
-                name: "Incline Machine Bench Press"
+                name: "Incline Machine Bench Press",
+                category: "Incline Push"
             }
         ],
 
-        dropdownChestIsolationValue: "Flat Dumbbell Fly",
+        dropdownChestIsolationValue: "Flat Dumbbell Flye",
 
         chestIsolation: [
             {
                 id: 1, 
-                name: "Flat Dumbbell Fly"
+                name: "Flat Dumbbell Flye",
+                category: "Chest Isolation"
             },
             {
                 id: 2, 
-                name: "Incline Dumbbell Fly"
+                name: "Incline Dumbbell Flye",
+                category: "Chest Isolation"
             },
             {
                 id: 3, 
-                name: "Cable Fly"
+                name: "Cable Flye",
+                category: "Chest Isolation"
             },
             {
                 id: 4, 
-                name: "High Cable Fly"
+                name: "High Cable Flye",
+                category: "Chest Isolation"
             },
             {
                 id: 5, 
-                name: "Machine Chest Fly"
+                name: "Machine Chest Flye",
+                category: "Chest Isolation"
             },
             {
                 id: 6, 
-                name: "Cable Incline Fly"
+                name: "Cable Incline Flye",
+                category: "Chest Isolation"
             },
             {
                 id: 7, 
-                name: "Pec Dec Fly"
+                name: "Pec Dec Flye",
+                category: "Chest Isolation"
             }
         ]
         }
@@ -128,41 +142,51 @@ class MovementMenu extends Component {
 
         let inclinePushArray = this.state.inclinePush.map((inclinePushName, index) => {
 
-            return <option key={index} ref={inclinePushName.name} value={inclinePushName.name} >{inclinePushName.name}</option>
+        return <option className="" key={index} ref={inclinePushName.name} value={inclinePushName.name}>{inclinePushName.name}</option>
+     
         });
 
         let chestIsolationArray = this.state.chestIsolation.map((chestIsolationName, index) => {
 
-            return <option key={index} ref={chestIsolationName.name} value={chestIsolationName.name} >{chestIsolationName.name}</option>
+        return <option key={index} ref={chestIsolationName.name} value={chestIsolationName.name} >{chestIsolationName.name}</option> 
+           
         });
     return (
         <>
-            <div className="container-fluid h-100 p-0 w-100">
-                <div className="row position-relative d-flex w-100 flex-row justify-content-center flex-wrap mx-0">
-                    <div className=" mainBody dropDownMenu col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100">              
-                            <form onSubmit={this.handleSubmitInclinePush}>
+            <div className="container">
+                <div className="row mainBody dropDownMenu col-sm col-md col-lg col-xl "> 
+                    <div className="col">
+                        <form className="formStyle1" onSubmit={this.handleSubmitInclinePush}>                        
+                                <div class="dropdown">
+                                    <label className="category font">Incline Push</label>
+                                    <label>
+                                        <select className="select font" value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
+                                        {inclinePushArray}
+                                        </select>
+                                    </label>
+                                    <input className="submit font" type="submit" value="Submit" />                             
+                                </div>
+                        </form>
+                        
+                        <form className="formStyle2" onSubmit={this.handleSubmitChestIsolation}>
+                            <div class="dropdown">
+                                <label className="category font">Chest Isolation</label>
                                 <label>
-                                    <select value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
-                                    {inclinePushArray}
-                                    </select>
-                                </label>
-                                <input type="submit" value="Submit" />
-                            </form>
-
-                            <form onSubmit={this.handleSubmitChestIsolation}>
-                                <label>
-                                    <select value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
+                                    <select className="select font" value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
                                     {chestIsolationArray}
                                     </select>
                                 </label>
-                                <input type="submit" value="Submit" />
-                            </form>   
-
-                            <div className="d-flex justify-content-center">
-                                <Link to="/RepMax" className="btn continueButton">Continue</Link>      
+                                <input className="submit font" type="submit" value="Submit" />
                             </div>
+                        </form> 
+                    </div>
+                    <div className="col">
+                        <RepMaxInput />
                     </div>
                 </div>
+                {/* <div className="font m-3 d-flex justify-content-center">
+                    <Link to="/RepMax" className="continueButton">Continue</Link>      
+                </div> */}
             </div> 
         </>
         )
