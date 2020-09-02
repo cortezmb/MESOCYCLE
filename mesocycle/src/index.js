@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import { createStore } from "redux"; 
 import { Provider } from "react-redux"; //this connects the Store with the Components via Provider
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import RepCounter from './components/RepCounter';
-// import RepMaxInput from './components/RepMaxInput';
 import Homepage from './components/Homepage';
 import Videos from './components/Videos';
-// import Statistics from './components/Statistics';
+import WorkoutOfTheDay from './components/WorkoutOfTheDay';
 import MovementMenu from './components/MovementMenu';
 import reducer from "./reducers/reducer";
 import BaseLayout from './components/layout/BaseLayout'
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import RepCounter from './components/RepCounter';
+// import RepMaxInput from './components/RepMaxInput';
+// import Statistics from './components/Statistics';
+
 
 //this createStore function will create the store in Redux in order to have a global state to put things in
 //reducer function goes in this function
@@ -31,10 +33,12 @@ ReactDOM.render(
         {/* This view is where use will choose a movement from the dropdown menu */}
         <Route path='/Movement' component={MovementMenu}/>
 
-        {/* This view has the movement descriptions and 10RM input forms */}
-        {/* <Route path='/RepMax' component={RepMaxInput}/>  */}
+        <Route path='/Workout' component={WorkoutOfTheDay}/>
 
         <Route path='/Video' component={Videos}/> 
+
+        {/* This view has the movement descriptions and 10RM input forms */}
+        {/* <Route path='/RepMax' component={RepMaxInput}/>  */}
 
         {/* This view has the workout of the day with rep counter
         <Route path='/RepCount' component={RepCounter}/> */}

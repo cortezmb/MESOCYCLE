@@ -4,7 +4,7 @@ import RepMaxInput from './RepMaxInput';
 import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
 
 
@@ -184,9 +184,9 @@ class MovementMenu extends Component {
                         <RepMaxInput />
                     </div>
                 </div>
-                {/* <div className="font m-3 d-flex justify-content-center">
-                    <Link to="/RepMax" className="continueButton">Continue</Link>      
-                </div> */}
+                <div className="font m-3 d-flex justify-content-center">
+                    <Link to="/Workout" className="continueButton">Continue</Link>      
+                </div>
             </div> 
         </>
         )

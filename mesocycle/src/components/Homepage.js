@@ -6,7 +6,7 @@ class Homepage extends Component {
   render() {
     return (
       <>
-        <div className="homepage mainBody">
+        <div className="homepage mainBody p-5">
             <p className="font">Welcome to Mesocycle.</p>
 
             <p className="font"> Mesocycle is an easy to use app that customizes and auto programs your workouts for an entire month.</p>

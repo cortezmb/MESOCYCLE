@@ -4,16 +4,15 @@ const initialState = {
     counter: 0,
     weight1: 0,
     weight2: 0,
-    inclinePushMovement: [
+    inclinePushMovement:
+        {
+            name: ""
+        },
+    
+        chestIsolationMovement: 
         {
             name: ""
         }
-    ],
-    chestIsolationMovement: [
-        {
-            name: ""
-        }
-    ]
 }
 
 const reducer = (state = initialState, action) => {
