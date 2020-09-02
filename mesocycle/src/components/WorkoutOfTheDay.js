@@ -5,10 +5,18 @@ class WorkoutOfTheDay extends Component {
   render() {
     return (
       <>
-        <div>{this.props.inputWeight1}</div>
-        <div>{this.props.inputWeight2}</div>
-        <div>{this.props.inclinePushMove}</div>
-        <div>{this.props.chestIsolationMove}</div>
+      <div className="Container">
+          <div className="row justify-content-center">
+            <div className="mr-1">{this.props.inputWeight1} lbs</div>
+            <div className="mr-1"> {this.props.inclinePushMove}</div>
+            <p>3 Sets  12 - 20 Rep Range</p>
+          </div>
+          <div className="row justify-content-center">
+            <div className="mr-1">{this.props.inputWeight2} lbs</div>
+            <div className="mr-1"> {this.props.chestIsolationMove}</div>
+            <p>3 Sets  12 - 20 Rep Range</p>
+          </div>
+      </div>
       </>
     )
   }
