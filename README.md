@@ -1,6 +1,8 @@
 
 <img src="mesocycle/src/components/images/MESOCYCLE LOGO_red_bcg.png" alt="Mesocycle Logo" width="300"/>
 
+<iframe className="" width="120" height="90" src="mesocycle/src/components/images/Screen Recording 2020-09-01 at 11.15.46 PM.mov" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # MESOCYCLE
 
 Say hello to your personal trainer.
