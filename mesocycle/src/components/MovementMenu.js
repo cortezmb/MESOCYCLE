@@ -4,7 +4,7 @@ import RepMaxInput from './RepMaxInput';
 import { chooseInclinePush } from '../actions/ChooseMovement';
 import { chooseChestIsolation } from '../actions/ChooseMovement';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import'./layout/BaseLayoutStyle.css';
 
 

@@ -19,7 +19,7 @@ class RepMaxInput extends Component {
       
       // id: 1, 
       // movementName: "dumbbell fly",
-      pounds: this.refs.amount.value
+      pounds: this.refs.weight1.value
     });
   }
 
@@ -34,7 +34,7 @@ class RepMaxInput extends Component {
       
       // id: 1, 
       // movementName: "dumbbell fly",
-      pounds: this.refs.weight.value
+      pounds: this.refs.weight2.value
     });
   }
 
@@ -47,14 +47,14 @@ class RepMaxInput extends Component {
                 <br/>
                 <form className="formStyle1 inputForm" onSubmit={this.handleSubmitInclinePush}>
                   <div class="form-group">
-                    <input className="submit font " ref="amount" type="text" placeholder="10RM" />
+                    <input className="submit font " ref="weight1" type="text" placeholder="10RM" />
                     <button className="submit font" type="submit">Submit</button>
                   </div>
                 </form><br/>
 
                 <form className="formStyle2 inputForm" onSubmit={this.handleSubmitChestIsolation}>
                   <div class="form-group">
-                    <input className="submit font" ref="weight" type="text" placeholder="10RM" />
+                    <input className="submit font" ref="weight2" type="text" placeholder="10RM" />
                     <button className="submit font" type="submit">Submit</button>
                   </div>
                 </form>

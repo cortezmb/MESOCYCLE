@@ -2,7 +2,8 @@
 
 const initialState = {
     counter: 0,
-    weight: 0,
+    weight1: 0,
+    weight2: 0,
     inclinePushMovement: [
         {
             name: ""
@@ -32,12 +33,12 @@ const reducer = (state = initialState, action) => {
         case 'INCREASE_MAX_INCLINE_PUSH':
             return {
                 ...state,
-                weight: action.weight.pounds
+                weight1: action.weight1.pounds
             }
         case 'INCREASE_MAX_CHEST_ISOLATION':
             return {
                 ...state,
-                weight: action.weight.pounds
+                weight2: action.weight2.pounds
             }
         case 'ADD_INCLINE_PUSH':
             return {
