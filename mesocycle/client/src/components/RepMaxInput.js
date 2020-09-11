@@ -46,14 +46,14 @@ class RepMaxInput extends Component {
               <div className=" mainBody inputForm col-sm col-md col-lg col-xl flex-column align-items-center justify-contents-center w-100"> */}
                 <br/>
                 <form className="formStyle1 inputForm" onSubmit={this.handleSubmitInclinePush}>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input className="submit font " ref="weight1" type="text" placeholder="10RM" />
                     <button className="submit font" type="submit">Submit</button>
                   </div>
                 </form><br/>
 
                 <form className="formStyle2 inputForm" onSubmit={this.handleSubmitChestIsolation}>
-                  <div class="form-group">
+                  <div className="form-group">
                     <input className="submit font" ref="weight2" type="text" placeholder="10RM" />
                     <button className="submit font" type="submit">Submit</button>
                   </div>

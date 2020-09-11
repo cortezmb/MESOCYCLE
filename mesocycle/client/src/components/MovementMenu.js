@@ -16,6 +16,8 @@ class MovementMenu extends Component {
 
         this.state = {
 
+        data: [],
+
         dropdownInclinePushValue: "Incline Medium Grip Bench Press",
 
         inclinePush: [
@@ -93,6 +95,23 @@ class MovementMenu extends Component {
         }
     }
 
+    //componentDidMount() Runs after the first render() lifecycle 
+    //async/await helps writing asynchronous code in a way that looks synchronous
+    componentDidMount = async () => {
+
+        let response = await fetch('/api');
+
+        let serverData = await response.json();
+
+        this.setState({
+
+            data:serverData
+        }, () => {
+            
+            console.log(this.state.data)
+        })
+    }
+
     handleChange = (e) => {
 
         console.log(e.target.value)
@@ -151,13 +170,20 @@ class MovementMenu extends Component {
         return <option key={index} ref={chestIsolationName.name} value={chestIsolationName.name} >{chestIsolationName.name}</option> 
            
         });
+
+        let results = this.state.data.map(user => {
+
+            return (
+                <> <div>{user.username}</div> </>
+            )
+        })
     return (
         <>
             <div className="container">
                 <div className="row mainBody dropDownMenu col-sm col-md col-lg col-xl "> 
                     <div className="col">
                         <form className="formStyle1" onSubmit={this.handleSubmitInclinePush}>                        
-                                <div class="dropdown">
+                                <div className="dropdown">
                                     <label className="category font">Incline Push</label>
                                     <label>
                                         <select className="select font" value={this.state.dropdownInclinePushValue} onChange={this.handleChange}>
@@ -169,7 +195,7 @@ class MovementMenu extends Component {
                         </form>
                         
                         <form className="formStyle2" onSubmit={this.handleSubmitChestIsolation}>
-                            <div class="dropdown">
+                            <div className="dropdown">
                                 <label className="category font">Chest Isolation</label>
                                 <label>
                                     <select className="select font" value={this.state.dropdownChestIsolationValue} onChange={this.handleChange}>
@@ -188,6 +214,7 @@ class MovementMenu extends Component {
                     <Link to="/Workout" className="continueButton">Continue</Link>      
                 </div>
             </div> 
+            {results}
         </>
         )
     }

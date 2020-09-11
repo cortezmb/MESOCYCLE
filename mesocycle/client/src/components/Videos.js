@@ -45,7 +45,7 @@ class Videos extends Component {
                         <li className="list-group-item text-align-center">
                             <div className="" key={index}>{video.snippet.title}</div><br/>
                             <img className="" width="120" height="90" src={video.snippet.thumbnails.standard.url} alt=""></img><br/><br/>
-                            <iframe className="" width="120" height="90" src={`https://www.youtube.com/embed/${video.contentDetails.videoId}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe className="" width="120" height="90" title="chest" src={`https://www.youtube.com/embed/${video.contentDetails.videoId}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </li>
                     </ul>
                 </div>
